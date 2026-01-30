@@ -1,0 +1,21 @@
+RequirementId,RequirementText,CoverageScore,Confidence,MatchedTests,RelatedMainComponents,Evidence
+"REQ-1","Пользователь может зарегистрироваться с валидными данными",73,0.200,"UserServiceTest#testMatchLoginAndGetUserIdWithInvalidCredentials (src/test/java/com/ecofriendly/ian/service/UserServiceTest.java) sim=0.729 ; UserServiceTest#testInvalidToken (src/test/java/com/ecofriendly/ian/service/UserServiceTest.java) sim=0.659 ; UserServiceTest#testValidToken (src/test/java/com/ecofriendly/ian/service/UserServiceTest.java) sim=0.648","","ACTION: проверяет работу метода с неверными учетными данными
+SUBJECT: UserService
+INTERFACE: matchLoginAndGetUserId
+ASSERT: возвращает правильный ID пользователя или ошибку аутентификации | "
+"REQ-2","Пользователь может войти в систему с корректными учетными данными",73,0.400,"UserServiceTest#testMatchLoginAndGetUserIdWithInvalidCredentials (src/test/java/com/ecofriendly/ian/service/UserServiceTest.java) sim=0.734 ; UserServiceTest#testValidToken (src/test/java/com/ecofriendly/ian/service/UserServiceTest.java) sim=0.651 ; UserServiceTest#testInvalidToken (src/test/java/com/ecofriendly/ian/service/UserServiceTest.java) sim=0.641","","ACTION: проверяет работу метода с неверными учетными данными
+SUBJECT: UserService
+INTERFACE: matchLoginAndGetUserId
+ASSERT: возвращает правильный ID пользователя или ошибку аутентификации | "
+"REQ-3","Неавторизованный пользователь не может создавать привычки",70,0.200,"UserServiceTest#testMatchLoginAndGetUserIdWithInvalidCredentials (src/test/java/com/ecofriendly/ian/service/UserServiceTest.java) sim=0.699 ; UserServiceTest#testInvalidToken (src/test/java/com/ecofriendly/ian/service/UserServiceTest.java) sim=0.679 ; UserServiceTest#testUpdateUserNotFoundThrowsException (src/test/java/com/ecofriendly/ian/service/UserServiceTest.java) sim=0.674","","ACTION: проверяет работу метода с неверными учетными данными
+SUBJECT: UserService
+INTERFACE: matchLoginAndGetUserId
+ASSERT: возвращает правильный ID пользователя или ошибку аутентификации | "
+"REQ-4","Пользователь может создать новую eco-привычку",64,0.200,"UserServiceTest#testMatchLoginAndGetUserIdWithInvalidCredentials (src/test/java/com/ecofriendly/ian/service/UserServiceTest.java) sim=0.641 ; UserServiceTest#testValidToken (src/test/java/com/ecofriendly/ian/service/UserServiceTest.java) sim=0.629 ; UserServiceTest#testInvalidToken (src/test/java/com/ecofriendly/ian/service/UserServiceTest.java) sim=0.626","","ACTION: проверяет работу метода с неверными учетными данными
+SUBJECT: UserService
+INTERFACE: matchLoginAndGetUserId
+ASSERT: возвращает правильный ID пользователя или ошибку аутентификации | "
+"REQ-5","При невалидных данных возвращается ошибка валидации",72,0.200,"UserServiceTest#testMatchLoginAndGetUserIdWithInvalidCredentials (src/test/java/com/ecofriendly/ian/service/UserServiceTest.java) sim=0.717 ; UserServiceTest#testValidToken (src/test/java/com/ecofriendly/ian/service/UserServiceTest.java) sim=0.633 ; UserServiceTest#testInvalidToken (src/test/java/com/ecofriendly/ian/service/UserServiceTest.java) sim=0.624","","ACTION: проверяет работу метода с неверными учетными данными
+SUBJECT: UserService
+INTERFACE: matchLoginAndGetUserId
+ASSERT: возвращает правильный ID пользователя или ошибку аутентификации | "

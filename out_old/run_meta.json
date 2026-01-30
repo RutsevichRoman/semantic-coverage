@@ -1,0 +1,9 @@
+{
+  "repo" : "/Users/roman/IdeaProjects/Eco-Friendly-Emissions-Mapper",
+  "requirementsFile" : "/Users/roman/IdeaProjects/sem-cov-in/requirements.md",
+  "sourceCodeFiles" : 30,
+  "testCodeFiles" : 8,
+  "requirementsCount" : 5,
+  "extractedTestsCount" : 29,
+  "timestampUtc" : "2026-01-29T21:06:03.217Z"
+}
