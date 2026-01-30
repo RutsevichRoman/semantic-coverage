@@ -1,6 +1,10 @@
 package org.example.semanticcoverage.enrich;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
+
+import static org.example.semanticcoverage.utils.Utils.getTestFileName;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -39,13 +43,16 @@ public class EnrichService {
     private final EmbeddingModel embedding;
     private final AiService aiService;
 
-    public void enrich(List<TestCaseDoc> tests, List<Requirement> reqs) {
-        enrichTestsWithSummariesAndEmbeddings(tests);
+    public void enrich(Path cacheTestDir, List<TestCaseDoc> tests, List<Requirement> reqs) {
+        enrichTestsWithSummariesAndEmbeddings(cacheTestDir, tests);
         enrichRequirementsWithEmbeddings(reqs);
     }
 
-    private void enrichTestsWithSummariesAndEmbeddings(List<TestCaseDoc> tests) {
+    private void enrichTestsWithSummariesAndEmbeddings(Path cacheTestDir, List<TestCaseDoc> tests) {
         for (TestCaseDoc t : tests) {
+            if (Files.exists(getTestFileName(cacheTestDir, t))) {
+                continue;
+            }
             log.info("Enrich test {} with summary...", t.methodName);
             String summary = aiService.getAiSummary(PROMPT_FOR_TESTS, t.rawSignalsForAi());
             t.summary = summary;

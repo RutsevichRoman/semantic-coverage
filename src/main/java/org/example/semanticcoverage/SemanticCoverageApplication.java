@@ -51,10 +51,12 @@ public class SemanticCoverageApplication {
 
             List<TestCaseDoc> tests = testExtractor.extract(repo, scannedFiles.testJavaFiles());
 
+            final Path resourceDir = repo.resolve("src").resolve("main").resolve("resources");
+            final Path cacheTestDir = resourceDir.resolve("cache").resolve("test-ai");
             // AI: summarize + embeddings (через Spring AI/Ollama)
-            enrichService.enrich(tests, reqs);
+            enrichService.enrich(cacheTestDir, tests, reqs);
 
-            fileWriter.writeToResources(repo, tests);
+            fileWriter.writeToResources(cacheTestDir, tests);
 
             final List<RequirementCoverage> coverages = engine.compute(reqs, tests);
 
