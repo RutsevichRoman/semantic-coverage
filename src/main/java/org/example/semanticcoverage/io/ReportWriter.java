@@ -18,7 +18,7 @@ public class ReportWriter {
 
         Files.createDirectories(outDir);
 
-        Path csv = outDir.resolve("coverage_report.csv");
+        Path csv = outDir.resolve("_coverage_report_" + System.currentTimeMillis() + ".csv");
         StringBuilder sb = new StringBuilder();
         sb.append("RequirementId,RequirementText,CoverageScore,Confidence,MatchedTests,Evidence\n");
 
